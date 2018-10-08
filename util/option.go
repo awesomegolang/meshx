@@ -10,6 +10,15 @@ func (op Option) Get(key string) string {
 	return op.options[key]
 }
 
+func (op Option) GetWithDefault(key string, defaultValue string) string {
+	v := op.options[key]
+	if v == "" {
+		return defaultValue
+	}
+
+	return v
+}
+
 func (op Option) Set(key, value string) {
 	op.options[key] = value
 }
