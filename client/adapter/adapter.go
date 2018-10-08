@@ -39,5 +39,5 @@ type Adapter interface {
 
 // Callback is invoked when this agent has received a request.
 type Callback interface {
-	Call(service string, method string, frame []byte, extra ...interface{})
+	Call(service string, method string, frame []byte, extra ...interface{}) ([]byte, error)
 }
